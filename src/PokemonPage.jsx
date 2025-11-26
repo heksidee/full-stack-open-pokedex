@@ -35,7 +35,7 @@ const PokemonPage = ({ previous, next }) => {
   );
 
   console.log('hiddenAbility=', hiddenAbility); // eslint-disable-line no-console
-  console.log('Next URL: ', previous.name); // eslint-disable-line no-console
+
   return (
     <>
       <div className="links">
