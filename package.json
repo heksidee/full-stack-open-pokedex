@@ -60,5 +60,8 @@
     "testPathIgnorePatterns": [
       "e2e-tests"
     ]
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
