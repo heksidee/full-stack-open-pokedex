@@ -16,3 +16,15 @@ Start by running `npm install` inside the project folder
 
 TESTITEKSTI
 LISÄÄ TESTITEKSTII
+
+# Git PR ohjeet
+
+- Tarkista haara: git branch
+- Uuden haaran luominen: git checkout -b <haaran_nimi>
+- Tee muutoksia uuteen haaraan.
+- Lisää muutokset:
+  - kaikki kerralla: git add .
+  - tietty tiedosto: git add <tiedosto_nimi>
+- Commit: git commit -m "muistiinpano commitista"
+- Pushaa haara GitHubiin: git push origin <haaran_nimi>
+- Tee PR GitHubissa.
