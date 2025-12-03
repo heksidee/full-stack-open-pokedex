@@ -47,6 +47,30 @@ jobs:
       - name: Trigger Render deploy
         run: curl -X POST https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
 
+      - name: Notify Discord on failure
+        if: failure()
+        uses: rjstone/discord-webhook-notify@v2
+        with:
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          severity: error
+          color: '#ff0000'
+          title: '❌ Build failed'
+          username: 'Webook 11.18'
+
+  notify-success:
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+    if: success()
+    steps:
+      - name: Notify Discord on success
+        uses: rjstone/discord-webhook-notify@v2
+        with:
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          severity: info
+          color: '#00ff00'
+          title: '✅ Deploy succeeded'
+          username: 'Webook 11.18'
+
   tag-release:
     needs: [build-and-deploy]
     runs-on: ubuntu-latest
