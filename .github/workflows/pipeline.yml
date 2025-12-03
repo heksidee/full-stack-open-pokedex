@@ -55,7 +55,7 @@ jobs:
           severity: error
           color: '#ff0000'
           title: '❌ Build failed'
-          username: 'Webook 11.18'
+          username: 'Full stack part 11'
 
   notify-success:
     runs-on: ubuntu-latest
@@ -69,7 +69,7 @@ jobs:
           severity: info
           color: '#00ff00'
           title: '✅ Deploy succeeded'
-          username: 'Webook 11.18'
+          username: 'Full stack part 11'
 
   tag-release:
     needs: [build-and-deploy]
